@@ -104,21 +104,21 @@ void solve()
 {
     ll n;
     cin>>n;
-    vl arr(n);
-    cin>>arr;
-    int cnt=1;
-    int el=arr[n-1];
-    for(int i=n-2;i>=0;i--){
-        if(arr[i]!=el) break;
-        cnt++;
+    vl arr(n+1);
+    arr[0]=-1;
+    for(int i=1;i<=n;i++) cin>>arr[i];
+    reverse(arr.begin()+1,arr.end());
+    int ans=0;
+    int ind=2;
+    while(ind<=n){
+        if(arr[ind]==arr[1]){
+            ind++;
+            continue;
+        }
+        ans++;
+        ind=(ind-1)*2 + 1;
     }
-    if(cnt==n){
-        cout<<0<<endl;
-    }
-    else{
-        
-    }
-
+    cout<<ans<<endl;
 }
 
 

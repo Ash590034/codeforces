@@ -36,12 +36,12 @@ class Trie {
     Node * root;
 
   public:
-    /** Initialize your data structure here. */
+    /** Initialize your data structure here.*/
     Trie() {
       root = new Node();
     }
 
-  /** Inserts a word into the trie. */
+  /** Inserts a word into the trie.*/
   void insert(string word) {
     Node * node = root;
     for (int i = 0; i < word.length(); i++) {

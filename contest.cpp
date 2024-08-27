@@ -36,6 +36,7 @@ using namespace std;
 #define pn cout<<"NO"<<endl
 #define pm cout<<"-1"<<endl
 #define ps(x,y) fixed<<setprecision(y)<<x
+#define endl '\n'
 
 //Typedef
 typedef long long ll;
@@ -51,6 +52,7 @@ typedef vector<vi> vvi;
 typedef vector<vl> vvl;
 typedef map<int,int> mii;
 typedef set<int> st;
+typedef priority_queue<ll> pqll;
 
 #ifndef ONLINE_JUDGE
 #define debug(x) cerr<<#x<<" ";_print(x); cerr<<endl;
@@ -88,7 +90,6 @@ bool isPerfectSquare(ll x){if (x >= 0) {ll sr = sqrt(x);return (sr * sr == x);}r
 //Constants
 vector <ll> primes;
 vector <bool> is_prime;
-
 // Mathematical functions
 void Sieve(int n){ is_prime.assign(n + 1, true); is_prime[0] = is_prime[1] = false; for(ll i = 2; i * i <= n; i++) if(is_prime[i]) for(ll j = i * i; j <= n; j += i) is_prime[j] = false;}
 void get_primes(int n){ for(int i = 2; i <= n; i++)  if(is_prime[i])  primes.push_back(i); }
@@ -99,12 +100,15 @@ ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
 ll moduloMultiplication(ll a,ll b,ll mod){ll res = 0;a %= mod;while (b){if (b & 1)res = (res + a) % mod;b >>= 1;}return res;}
 ll powermod(ll x, ll y, ll p){ll res = 1;x = x % p;if (x == 0) return 0;while (y > 0){if (y & 1)res = (res*x) % p;y = y>>1;x = (x*x) % p;}return res;}
 ll modinv(ll p,ll q){ll ex;ex=M-2;while (ex) {if (ex & 1) {p = (p * q) % M;}q = (q * q) % M;ex>>= 1;}return p;}
-
+vector<ll> getBin(ll a){
+    vector<ll> ans(64,0);
+    for(ll i=0;i<64;i++) ans[i]=((a>>i)&1LL);
+    return ans;
+}
 void solve()
 {
-
+    
 }
-
 
 int32_t main()
 {
@@ -113,16 +117,12 @@ int32_t main()
         freopen("Error.txt","w",stderr);
     #endif
     
-    int t;
+    int t=1;
     cin>>t;
     while(t--)
     {
     solve();
     }
-    return 0;
-    
+    return 0;  
 }
-
-
-
 
